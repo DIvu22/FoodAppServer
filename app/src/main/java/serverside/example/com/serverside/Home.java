@@ -59,9 +59,8 @@ public class Home extends AppCompatActivity
     Button btn_upload,btn_select;
     Category newCategory;
 
-    Uri saveUri;
-    private  final int PICK_IMAGE_REQUEST=71;
-
+   Uri saveUri;
+  DrawerLayout drawer;
 
 
     @Override
@@ -85,7 +84,7 @@ public class Home extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -145,6 +144,7 @@ public class Home extends AppCompatActivity
                 if(newCategory!= null)
                 {
                   categories.push().setValue(newCategory);
+
                 }
 
             }
@@ -205,7 +205,7 @@ public class Home extends AppCompatActivity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==PICK_IMAGE_REQUEST && resultCode==RESULT_OK
+        if(requestCode==Common.PICK_IMAGE_REQUEST && resultCode==RESULT_OK
                 && data!=null && data.getData()!=null)
         {
             saveUri=data.getData();
@@ -219,7 +219,7 @@ public class Home extends AppCompatActivity
         Intent intent= new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-         startActivityForResult(Intent.createChooser(intent,"Please select"),PICK_IMAGE_REQUEST);
+         startActivityForResult(Intent.createChooser(intent,"Please select"),Common.PICK_IMAGE_REQUEST);
     }
 
 
