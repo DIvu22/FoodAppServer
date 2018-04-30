@@ -1,5 +1,6 @@
 package serverside.example.com.serverside.Common;
 
+import serverside.example.com.serverside.Model.Request;
 import serverside.example.com.serverside.Model.User;
 
 /**
@@ -11,6 +12,7 @@ public class Common {
     public  static  final  String DELETE="Delete";
     public static   final int PICK_IMAGE_REQUEST=71;
     public static User currentUser;
+    public static Request currentRequest;
 
     public static String convertCodeToStatus(String code) {
         if (code.equals("0"))
