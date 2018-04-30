@@ -41,6 +41,7 @@ import java.util.UUID;
 import serverside.example.com.serverside.Common.Common;
 import serverside.example.com.serverside.Interface.ItemClickListener;
 import serverside.example.com.serverside.Model.Category;
+import serverside.example.com.serverside.Service.ListenOrder;
 import serverside.example.com.serverside.ViewHolder.MenuViewHolder;
 
 public class Home extends AppCompatActivity
@@ -103,6 +104,9 @@ public class Home extends AppCompatActivity
         recycler_menu.setLayoutManager(layoutManager);
 
         loadMenu();
+
+        Intent intent = new Intent(Home.this, ListenOrder.class);
+        startService(intent);
 
     }
 
