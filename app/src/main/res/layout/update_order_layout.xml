@@ -6,11 +6,11 @@
     android:layout_margin="8dp"
     app:cardElevation="4dp">
 
-    <Spinner
+    <com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/statusSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </Spinner>
+    </com.jaredrummler.materialspinner.MaterialSpinner>
 
 </android.support.v7.widget.CardView>
